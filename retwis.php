@@ -1,12 +1,9 @@
-<?
+<?php
 require 'Predis/Autoloader.php';
 Predis\Autoloader::register();
 
 function getrand() {
-    $fd = fopen("/dev/urandom","r");
-    $data = fread($fd,16);
-    fclose($fd);
-    return md5($data);
+    return md5(mt_rand());
 }
 
 function isLoggedIn() {
